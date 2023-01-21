@@ -26,6 +26,10 @@ class App extends Component {
   //function to send post request to the server
   publishBlog = async () => {
     const { title, content } = this.state;
+    if (title === "" || content === "") {
+      alert("Please enter blog title and content");
+      return;
+    }
     const blogData = { title, content };
 
     const options = {
